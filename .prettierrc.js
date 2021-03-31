@@ -5,7 +5,8 @@ if (fs.existsSync(".prettierrc.json")) {
 } else {
   module.exports = {
     "printWidth": 120,
-    "endOfLine": "lf"
+    "endOfLine": "lf",
+    "useTabs": true
   }
 }
 
