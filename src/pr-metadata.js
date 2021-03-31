@@ -5,7 +5,7 @@ module.exports = () => {
 
 	// PRs should have at least a sentence of description
 	if (pr.body.length === 0) {
-		fail("Please add a description to your PR.");
+		warn("Please add a description to your PR.");
 	}
 
 	var path = require("path");
