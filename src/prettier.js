@@ -1,6 +1,6 @@
 const { message, danger, warn, markdown } = require("danger");
 
-export default () => {
+module.exports = () => {
 
 	const pr = danger.github.pr;
 	const modified = danger.git.modified_files;

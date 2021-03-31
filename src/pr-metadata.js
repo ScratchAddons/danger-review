@@ -1,7 +1,7 @@
 const { message, danger } = require("danger");
 const pr = danger.github.pr;
 
-export default () => {
+module.exports = () => {
 
 	// PRs should have at least a sentence of description
 	if (pr.body.length === 0) {
