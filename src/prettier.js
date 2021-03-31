@@ -21,7 +21,7 @@ module.exports = () => {
 
 	if (badFiles.length > 0) {
 		warn(
-			`${badFiles.length} need to be formatted with Prettier. Please format your code using Prettier, or go [here](https://github.com/${pr.user}/ScratchAddons/actions) to enable formatting automation.`
+			`${badFiles.length} need to be formatted with Prettier. Please format your code using Prettier, or go <a href="https://github.com/${pr.user}/ScratchAddons/actions">here</a> to enable formatting automation.`
 		);
 		markdown("")
 		markdown("### Files needed formatting")
