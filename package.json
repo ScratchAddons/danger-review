@@ -1,0 +1,16 @@
+{
+  "name": "sa-danger-review",
+  "version": "1.0.0",
+  "description": "",
+  "repository": "github:ScratchAddons/danger-review",
+  "main": "dangerfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "danger": "^10.6.4",
+    "prettier": "^2.2.1"
+  }
+}
