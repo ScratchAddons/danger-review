@@ -1,4 +1,4 @@
-const { message, danger } = require("danger");
+// const { message, danger } = require("danger");
 const pr = danger.github.pr;
 
 module.exports = () => {

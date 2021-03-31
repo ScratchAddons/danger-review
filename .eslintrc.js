@@ -11,7 +11,12 @@ if (fs.existsSync(".eslintrc.json")) {
       "es2020": true,
       "browser": true
     },
-    "globals": {},
+    "globals": {
+      "message": "readonly", 
+      "danger": "readonly", 
+      "warn": "readonly", 
+      "markdown": "readonly"
+    },
     "extends": "eslint:recommended",
     "rules": {
       "no-prototype-builtins": 1,
