@@ -6,7 +6,7 @@ module.exports = () => {
 
 	const modifiedLibFiles = modified.filter((p) => p.includes("libraries/"));
 
-	if (modifiedLibFiles !== 0) {
+	if (modifiedLibFiles > 0) {
 		if (
 			!modifiedLibFiles.includes("libraries/CREDITS.md") ||
 			!modifiedLibFiles.includes("libraries/license-info.json")
