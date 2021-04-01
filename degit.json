@@ -1,0 +1,6 @@
+[
+	{
+		"action": "remove",
+		"files": ["LICENSE", "README.md", ".eslintrc.js", ".prettierrc.js", ".gitignore"]
+	}
+]
