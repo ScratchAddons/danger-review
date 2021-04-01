@@ -16,31 +16,30 @@ module.exports = () => {
 	// Check all files for Prettier
 	let badFiles = [];
 	for (var file of modified) {
+
 		if (multimatch(modified, ignoreList).length === 1) return
+
 		resolved = path.resolve(file);
 		let readFile = fs.readFileSync(resolved, { encoding: "utf8", flag: "r" });
 		let info = prettier.getFileInfo.sync(resolved);
-		if (info.ignored) return;
 		const extname = path.extname(file);
 		const filePath = path.basename(file, extname);
-		if (extname == ".svg") return;
-		let check = prettier.check(readFile, { 
+		let check = prettier.check(readFile, {
 			filepath: filePath + extname,
 			...config
 		});
 		if (!check) badFiles.push(file);
+
 	}
 
 	if (badFiles.length > 0) {
+		// TODO: Verify if the Actions URL is right. If not, use `base` instead of `head`.
 		warn(
-			`${badFiles.length} need to be formatted with Prettier. Please format your code using Prettier, or go <a href="https://github.com/${pr.user}/ScratchAddons/actions">here</a> to enable formatting automation.`
+			`${badFiles.length} file${badFiles.length === 1 ? "" : "s"} need${badFiles.length === 1 ? "s" : ""} to be formatted.`
 		);
-		markdown("")
 		markdown("## Files needed formatting")
-		markdown("")
-		badFiles.forEach(badFile => {
-			markdown(`- ${badFile}`)
-		})
+		markdown(`${badFiles.length === 1 ? "This file needs" : "These files need"} to be formatted. Please format your code using Prettier, or click <a href="${pr.head.repo.html_url}/actions">here</a> to enable formatting automation.`)
+		markdown(badFiles.map(file => `- ${file}`).join("\n"))
 	}
 
 }
